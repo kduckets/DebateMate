@@ -20,8 +20,7 @@ var app = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'firebase',
-    'ui.bootstrap'
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
