@@ -50,6 +50,10 @@ var app = angular
     }
   }
 })
+    .when('/users/:userId', {
+  templateUrl: 'views/profile.html',
+  controller: 'ProfileCtrl'
+})
       .otherwise({
         redirectTo: '/'
       });

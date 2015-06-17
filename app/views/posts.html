@@ -14,13 +14,12 @@
 
       <div class="info">
         <a ng-href="#/posts/{{ post.$id }}">
-        {{ post.teamA }} vs {{ post.teamB }}
+        {{ post.teamA }} vs. {{ post.teamB }}
         </a>
       </div>
       <div>
         <span>submitted by <a ng-href="#/users/{{ post.creatorUID }}">{{ post.creator }}</a></span>
         &mdash;
-        <a ng-href="#/posts/{{ post.$id }}">comments</a>
         <a ng-click="deletePost(post)" ng-show="user.uid === post.creatorUID">delete</a>
       </div>
     </div>
