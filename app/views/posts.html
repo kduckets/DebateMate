@@ -1,7 +1,12 @@
 <div align="center">
+ <div ng-hide="signedIn()">
+      <p><a href="#/login">Sign in</a> or <a ng-href="#/register">register</a> to start a debate.</p>
+    </div>
 <form ng-submit="submitPost()" ng-show="signedIn()">
-<input type="text" ng-model="post.teamA" /> vs.
+<input type="text" ng-model="post.teamA" /> 
+  <br/><b>vs.</b><br/>
 <input type="text" ng-model="post.teamB" />
+<br/>
 <input type="submit" value="Debate it!" />
 </form>
 </div>
@@ -19,7 +24,7 @@
       </div>
       <div>
         <span>submitted by <a ng-href="#/users/{{ post.creatorUID }}">{{ post.creator }}</a></span>
-        <a ng-click="deletePost(post)" ng-show="user.uid === post.creatorUID">delete</a>
+        <a ng-click="deletePost(post)" ng-show="user.uid === post.creatorUID">&mdash; delete</a>
       </div>
     </div>
   </div>
