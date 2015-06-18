@@ -57,9 +57,9 @@ Choose a side to comment and vote for the best argument
     <form ng-show="signedIn()" ng-submit="addCommentA()">
       <textarea
         ng-model="commentText"
-        placeholder="Post a Comment"
+        placeholder="Post an opinion"
         class="form-control"></textarea><br />
-      <input type="submit" value="Post Comment" class="btn btn-primary" />
+      <input type="submit" value="Post" class="btn btn-primary" />
     </form>
   </div>
 </div>
@@ -82,16 +82,14 @@ Choose a side to comment and vote for the best argument
   </div>
 
   <div class="cmt-form">
-    <div ng-hide="signedIn()">
-      <p><a href="#/login">Sign in</a> to post a comment</p>
-    </div>
+   
 
     <form ng-show="signedIn()" ng-submit="addCommentB()">
       <textarea
         ng-model="commentText"
-        placeholder="Post a Comment"
+        placeholder="Post an opinion"
         class="form-control"></textarea><br />
-      <input type="submit" value="Post Comment" class="btn btn-primary" />
+      <input type="submit" value="Post" class="btn btn-primary" />
     </form>
   </div>
 </div>
