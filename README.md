@@ -13,6 +13,7 @@ bower install
 #install grunt
 
 npm install grunt --save-dev
+
 npm install
 
 npm install -g bower grunt
