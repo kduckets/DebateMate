@@ -21,7 +21,8 @@ app.controller('CommentsCtrl', function ($scope, $routeParams, Post, Auth) {
     var comment = {
       text: $scope.commentText,
       creator: $scope.user.profile.username,
-      creatorUID: $scope.user.uid
+      creatorUID: $scope.user.uid,
+      votes: 0
     };
     $scope.commentsA.$add(comment);
 
@@ -36,7 +37,8 @@ app.controller('CommentsCtrl', function ($scope, $routeParams, Post, Auth) {
     var comment = {
       text: $scope.commentText,
       creator: $scope.user.profile.username,
-      creatorUID: $scope.user.uid
+      creatorUID: $scope.user.uid,
+      votes: 0
     };
     $scope.commentsB.$add(comment);
 
@@ -49,6 +51,30 @@ app.controller('CommentsCtrl', function ($scope, $routeParams, Post, Auth) {
 
   $scope.deleteCommentB = function (comment) {
   $scope.commentsB.$remove(comment);
+};
+
+  $scope.upvoteA = function(comment) {
+  comment.votes +=1;
+  Post.commentAVote($routeParams.postId, comment.$id, comment.votes);
+
+};
+
+  $scope.upvoteB = function(comment) {
+  comment.votes +=1;
+  Post.commentBVote($routeParams.postId, comment.$id, comment.votes);
+
+};
+
+  $scope.downvoteA = function(comment) {
+  comment.votes -=1;
+  Post.commentAVote($routeParams.postId, comment.$id, comment.votes);
+
+};
+
+  $scope.downvoteB = function(comment) {
+  comment.votes -=1;
+  Post.commentBVote($routeParams.postId, comment.$id, comment.votes);
+
 };
 
 });

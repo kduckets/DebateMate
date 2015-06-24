@@ -18,6 +18,11 @@
     <div class="col-md-9 col-xs-11">
 
       <div class="info">
+
+           <sub>{{ post.votes }}</sub>
+      <img ng-click="upvote(post)" ng-src="/images/up.png"></img>
+       <img ng-click="downvote(post)" ng-src="/images/down.png"></img>
+
         <a ng-href="#/posts/{{ post.$id }}">
         {{ post.teamA }} vs. {{ post.teamB }}
         </a>

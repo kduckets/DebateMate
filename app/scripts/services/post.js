@@ -14,12 +14,25 @@ app.factory('Post', function ($firebase, FIREBASE_URL) {
     });
   },
 
+    vote: function(postId, votes){
+      return ref.child('posts').child(postId).update({'votes': votes});
+     },
+
     commentsA: function (postId) {
       return $firebase(ref.child('commentsA').child(postId)).$asArray();
     },
     commentsB: function (postId) {
       return $firebase(ref.child('commentsB').child(postId)).$asArray();
     },
+
+      commentAVote: function(postId, commentId, votes){
+      return ref.child('commentsA').child(postId).child(commentId).update({'votes': votes});
+     },
+
+      commentBVote: function(postId, commentId, votes){
+      return ref.child('commentsB').child(postId).child(commentId).update({'votes': votes});
+     },
+
     get: function (postId) {
       return $firebase(ref.child('posts').child(postId)).$asObject();
     },
