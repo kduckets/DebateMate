@@ -36,8 +36,8 @@ Choose a side to comment and vote for the best argument
   <div ng-repeat="comment in commentsA | orderBy:'-votes'" class="row cmt">
     <div class="col-md-12">
   <sub>{{ comment.votes }}</sub>
-      <img ng-click="upvoteA(comment)" ng-src="/images/up.png"></img>
-       <img ng-click="downvoteA(comment)" ng-src="/images/down.png"></img>
+      <img ng-click="upvoteA(comment)" src="/images/up.png"></img>
+       <img ng-click="downvoteA(comment)" src="/images/down.png"></img>
 
       <p>{{ comment.text }}</p>
       <p class="author">posted by
@@ -72,8 +72,8 @@ Choose a side to comment and vote for the best argument
  <div ng-repeat="comment in commentsB | orderBy:'-votes'" class="row cmt">
     <div class="col-md-12">
      <sub>{{ comment.votes }}</sub>
-      <img ng-click="upvoteB(comment)" ng-src="/images/up.png"></img>
-       <img ng-click="downvoteB(comment)" ng-src="/images/down.png"></img>
+      <img ng-click="upvoteB(comment)" src="/images/up.png"></img>
+       <img ng-click="downvoteB(comment)" src="/images/down.png"></img>
          
       <p>{{ comment.text }}</p>
       <p class="author">posted by
