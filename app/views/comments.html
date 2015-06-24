@@ -33,7 +33,7 @@ Choose a side to comment and vote for the best argument
 </div>
 
 <div class="tab-pane" ng-show="view_tab == 'tabA'">
-  <div ng-repeat="comment in commentsA" class="row cmt">
+  <div ng-repeat="comment in commentsA | orderBy:'-votes'" class="row cmt">
     <div class="col-md-12">
   <sub>{{ comment.votes }}</sub>
       <img ng-click="upvoteA(comment)" ng-src="/images/up.png"></img>
@@ -69,7 +69,7 @@ Choose a side to comment and vote for the best argument
 </div>
 
 <div class="tab-pane" ng-show="view_tab == 'tabB'">
- <div ng-repeat="comment in commentsB" class="row cmt">
+ <div ng-repeat="comment in commentsB | orderBy:'-votes'" class="row cmt">
     <div class="col-md-12">
      <sub>{{ comment.votes }}</sub>
       <img ng-click="upvoteB(comment)" ng-src="/images/up.png"></img>
